@@ -6,7 +6,7 @@ from inspect_ai.solver import generate
 
 
 @task
-def sycophancyprobe(dataset_path="disputes.csv") -> Task:
+def sycophancyprobe(dataset_path="../resources/disputes.csv") -> Task:
     return Task(
         dataset=csv_dataset(
             dataset_path, 
