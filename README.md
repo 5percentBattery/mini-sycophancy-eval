@@ -119,9 +119,6 @@ As it stands right now in this commit of the repo, the evaluation has flaws. Bes
 * It would be nice if the main eval (`uv run mini-sycophancy-eval`) would compare models and plot the result
 * It would be nice if more model sources (e.g. Anthropic, Google, Ollama) were included as source
 
-#### Code
-* There has to be a better way to deal with the dataset paths, right?
-
 #### Dataset
 * The datasets only contain a total of 21 records. More data is necessary as basis for a strong argument
 * With a bigger dataset, the eval deserves categorizations of challenges

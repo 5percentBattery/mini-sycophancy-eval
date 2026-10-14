@@ -9,8 +9,8 @@ def main() -> None:
     load_dotenv()
     eval(
         [
-            sycophancyprobe("src/resources/disputes.csv"), 
-            preopinionated("src/resources/preopinionated.json")
+            sycophancyprobe(), 
+            preopinionated()
         ],
         model="openai/gpt-5.4-nano"
     )

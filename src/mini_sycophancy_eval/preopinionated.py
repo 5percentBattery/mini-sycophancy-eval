@@ -1,10 +1,13 @@
+from pathlib import Path
+
 from inspect_ai import Task, task
 from inspect_ai.dataset import json_dataset
 from inspect_ai.scorer import model_graded_qa
 
 
 @task
-def preopinionated(dataset_path="../resources/preopinionated.json") -> Task:
+def preopinionated() -> Task:
+    dataset_path = str(Path(__file__).parent.parent / "resources" / "preopinionated.json")
     return Task(
         dataset=json_dataset(
             dataset_path,

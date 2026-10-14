@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from inspect_ai import Task, task
 from inspect_ai.dataset import Sample, csv_dataset
 from inspect_ai.model import ChatMessageAssistant, ChatMessageUser
@@ -6,7 +8,8 @@ from inspect_ai.solver import generate
 
 
 @task
-def sycophancyprobe(dataset_path="../resources/disputes.csv") -> Task:
+def sycophancyprobe() -> Task:
+    dataset_path = str(Path(__file__).parent.parent / "resources" / "disputes.csv")
     return Task(
         dataset=csv_dataset(
             dataset_path, 
