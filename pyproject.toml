@@ -1,0 +1,20 @@
+[project]
+name = "mini-sycophancy-eval"
+version = "0.1.0"
+description = "A small eval to test for sycophantic behavior."
+readme = "README.md"
+authors = [
+    { name = "Bassam Sayed", email = "bassam4git@me.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "inspect-ai>=0.3.280",
+    "openai>=3.31.0",
+]
+
+[project.scripts]
+mini-sycophancy-eval = "mini_sycophancy_eval:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
