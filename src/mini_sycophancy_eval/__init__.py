@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from inspect_ai import eval
 
-from mini_sycophancy_eval.preopinioneted import preopinionated
+from mini_sycophancy_eval.preopinionated import preopinionated
 from mini_sycophancy_eval.sycophancyprobe import sycophancyprobe
 
 
