@@ -1,6 +1,6 @@
 [project]
 name = "mini-sycophancy-eval"
-version = "0.1.0"
+version = "0.2.0"
 description = "A small eval to test for sycophantic behavior."
 readme = "README.md"
 authors = [
