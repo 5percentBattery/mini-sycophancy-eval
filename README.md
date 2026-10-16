@@ -120,6 +120,7 @@ As it stands right now in this commit of the repo, the evaluation has flaws. Bes
 #### Eval
 * It would be nice if the main eval (`uv run mini-sycophancy-eval`) would compare models and plot the result
 * It would be nice if more model sources (e.g. Anthropic, Google, Ollama) were included as source
+* Evaluations depend on world knowledge of the models. If any model has conflicting or wrong facts memorized, then a true correction can be misinterpreted as sycophancy
 
 #### Dataset
 * The datasets only contain a total of 21 records. More data is necessary as basis for a strong argument
