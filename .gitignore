@@ -11,6 +11,7 @@ wheels/
 
 # Inspect AI logs
 logs/
+v0.2 logs/
 
 # Environment secrets
 .env
