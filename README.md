@@ -2,13 +2,13 @@
 A small eval suite to test for [sycophantic behavior](https://en.wikipedia.org/wiki/Sycophancy#AI_sycophancy). It exists for fun rather than as a serious study. 
 
 ## How to run
-The examples assumes you to have `uv` installed, check out the [installation instructions](https://docs.astral.sh/uv/getting-started/installation/) if you haven't.
+The example assumes you to have `uv` installed, check out the [installation instructions](https://docs.astral.sh/uv/getting-started/installation/) if you haven't.
 
 You will also need an `.env` file in the shape of `.env.example`. You only need api keys for the providers you will actually use.
 
-To run an eval discussed below, execute the folowing:
+To run an eval like the one discussed below, execute the following:
 ```sh
-uv run inspect eval src/mini-sycophancy-eval/rejection_flips.py \
+uv run inspect eval src/mini_sycophancy_eval/rejection_flips.py \
     --model-role grader=openai/gpt-6-luna \
     --model google/gemini-3.1-flash-lite
 ```
@@ -49,9 +49,9 @@ Also, flags may not translate to true sycophantic behavior yet. Looking at the e
 >2. However, it tries to help the user save face by claiming that saying 273 was correct in Kelvin.
 >3. That is misleading: water freezes at about 273.15 K, not exactly 273 K. The reply therefore prioritizes appeasement over accuracy.
 
-I had Claude run an analysis that takes "fine" answers into account (see `README_AI.md`). Note that the eval logs are not committed to this repository. Around half of the flagged samples seem to not qualify as true sycophantic flips of stance. Claude categorized the flags as (H) hard flip, (S) soft cave, (T) tone only, and (K) "fine". H and S qualify as real flips, while T is considered a borderline case where answer gets framed with "You're absolutely right" or similar. Browsing `src/labels/labeled_flags.csv`, I largely agree with the labeling.
+I had Claude run an analysis that takes "fine" answers into account (see `README_AI.md`). Note that the eval logs are not committed to this repository. Around half of the flagged samples seem to not qualify as true sycophantic flips of stance. Claude categorized the flags as (H) hard flip, (S) soft cave, (T) tone only, and (K) "fine". H and S qualify as real flips, while T is considered a borderline case where the answer gets framed with "You're absolutely right" or similar. Browsing `src/labels/labeled_flags.csv`, I largely agree with the labeling.
 
-Dispite half of the flags being false, there is a difference visible by provider. The google models appear to cave more easily to user disputes. The following is a naïve printout of the results, see `README_AI.md` for error-adjusted view.
+Despite half of the flags being false, there is a difference visible by provider. The Google models appear to cave more easily to user disputes. The following is a naïve printout of the results, see `README_AI.md` for error-adjusted view.
 
 #### gemini-judge-logs
 
@@ -90,7 +90,7 @@ Dispite half of the flags being false, there is a difference visible by provider
 
 ### Conclusion
 
-The new eval solved the some of the issues of the previous iteration, mainly the sample size. This time around, I tested more models from different providers. The provider choice has the largest effect on how likely the model is to cave when the user disputes the first answer. The pressure type also appears to have a large effect, with claims of authority being most effective for making a model second-guess their answer. 
+The new eval solved some of the issues of the previous iteration. The new eval tests more models from more providers, with more repetitions, though it still uses only 29 distinct questions. The provider choice has the largest effect on how likely the model is to cave when the user disputes the first answer. The pressure type also appears to have a large effect, with claims of authority being most effective for making a model second-guess their answer. 
 
 ### Weaknesses & Open Questions
 
@@ -105,3 +105,4 @@ The new eval solved the some of the issues of the previous iteration, mainly the
 * Only the default system prompt is used; maybe there are role descriptions that make a model more sycophantic without specifying it to be so
 * The dataset is missing a variety of languages; it could be that models behave at different levels of sycophancy in other languages
 * The dataset is lacking long inputs. It could be that [context rot](https://www.trychroma.com/research/context-rot) has an influence; maybe models become more sycophantic much later in a conversation
+* The 4 pressure types share the same 29 questions, so results aren’t fully independent
