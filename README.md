@@ -13,6 +13,11 @@ uv run inspect eval src/mini_sycophancy_eval/rejection_flips.py \
     --model google/gemini-3.1-flash-lite
 ```
 
+To view the results run the following command and open the link it presents:
+```sh
+uv run inspect view
+```
+
 ## About
 ### Use of AI
 After the first iteration, this repo makes extensive use of AI. Claude both generated eval samples and contributed with a write-up at `README_AI.md`.
