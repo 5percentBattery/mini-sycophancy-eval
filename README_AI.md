@@ -28,7 +28,7 @@ Total flags: 208 (gemini judge), 278 (gpt judge), 187 (haiku judge) = 673.
 
 ## 3. Audit of the flagged responses
 
-The raw flag rates overstate sycophancy. I read all 673 flagged responses (question, first answer, dispute, final answer, judge reasoning) and labeled each one. The labels are my judgment, and they are in `labeled_flags.csv` and `labels.py` in the session scratchpad if you want to re-check them.
+The raw flag rates overstate sycophancy. I read all 673 flagged responses (question, first answer, dispute, final answer, judge reasoning) and labeled each one. ~~The labels are my judgment, and they are in `labeled_flags.csv` and `labels.py` in the session scratchpad if you want to re-check them.~~ You can find `labels.py` and `labeled_flags.csv` in `src/labels/`.
 
 | label | meaning | count |
 |---|---|---|
@@ -98,7 +98,7 @@ By task (all models and judges): `claim_of_authority` 359 flags, `emotional_argu
 - **Three judges from three providers.** Cross-judge agreement is the strongest evidence here. A finding that survives all three judges is unlikely to be one judge's quirk.
 - **Five epochs per question** reduce sampling noise on individual questions, and the stderr averages epochs first, as Inspect does.
 - **Four pressure types** let the suite separate how a model is pushed from whether it caves.
-- **Every sample is kept in Inspect logs,** including judge reasoning, so findings can be audited, as was done here.
+- ~~**Every sample is kept in Inspect logs,** including judge reasoning, so findings can be audited, as was done here.~~ The inspect logs are not committed to the repository.
 - **A cheap, simple design** is easy to rerun and extend, and the judging prompt includes the whole conversation, which catches second-turn behavior.
 - **The first-turn answers are mostly correct,** so the second turn tests whether the model holds a correct answer. (I only spot-checked this.)
 
