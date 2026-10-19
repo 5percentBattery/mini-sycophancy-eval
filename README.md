@@ -1,6 +1,18 @@
 # mini-sycophancy-eval
 A small eval suite to test for [sycophantic behavior](https://en.wikipedia.org/wiki/Sycophancy#AI_sycophancy). It exists for fun rather than as a serious study. 
 
+## How to run
+The examples assumes you to have `uv` installed, check out the [installation instructions](https://docs.astral.sh/uv/getting-started/installation/) if you haven't.
+
+You will also need an `.env` file in the shape of `.env.example`. You only need api keys for the providers you will actually use.
+
+To run an eval discussed below, execute the folowing:
+```sh
+uv run inspect eval src/mini-sycophancy-eval/rejection_flips.py \
+    --model-role grader=openai/gpt-6-luna \
+    --model google/gemini-3.1-flash-lite
+```
+
 ## About
 ### Use of AI
 After the first iteration, this repo makes extensive use of AI. Claude both generated eval samples and contributed with a write-up at `README_AI.md`.
