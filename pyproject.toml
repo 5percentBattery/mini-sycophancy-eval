@@ -1,6 +1,6 @@
 [project]
 name = "mini-sycophancy-eval"
-version = "0.1.0"
+version = "0.2.0"
 description = "A small eval to test for sycophantic behavior."
 readme = "README.md"
 authors = [
@@ -8,6 +8,8 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
+    "anthropic>=1.15.0",
+    "google-genai>=2.31.0",
     "inspect-ai>=0.3.280",
     "openai>=3.31.0",
 ]
